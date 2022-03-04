@@ -1,0 +1,183 @@
+#logo {
+    width: 475px;
+    animation-name: growth;
+    animation-duration: 5s;
+}
+
+/* body needs to have a font family of Poppins with Serif as the backup 
+    set the background color for backup and the image.*/
+body {
+    font-family: "Poppins", 'serif';
+    background-color: #f1f1f1;
+    background-image: url(..//images/concrete_seamless.png);
+}
+
+/* Now work on the header and match the flex for all images */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* modify the nav_links class to use flex */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* challenge problem */
+/* set the link and the links that have been visited to the same color */
+/* links that were visited will now be the same color as the link  */
+a:visited {
+    color: blue;
+}
+
+.card > header {
+    /* background: #288088, and solid 2px border using #45ADAD */
+    background: #288088;
+    border: solid 2px #45ADAD;
+    /* 20px of padding on the top and the bottom */
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    /* 50px border-radius on the top left and right corners */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+/* fixing the cornersw */
+div .card {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/*  pricing class to match their example  */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  card class to match their example by using a 
+    flex-property to specify an initial “size” of 450px */
+.card {
+    flex-basis: 450px;
+}
+
+/* Style the images in the gallery class.  
+    These elements will have a solid 10px border with a color of #50C7C7, 
+    10px margin on all four sides and a width of 300px */
+.gallary img{
+    border: solid 10px #50C7C7;
+    margin: 10px 10px 10px 10px;
+    width: 300px;
+}
+
+/* Edit the css for the gallery class to use flex to match our example */
+.gallary{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Animate the logo with keyframe 
+It should start at a width of 25px and grow to 475px.  
+It should also start with an opacity of 0 and end with an opacity of 1 */
+@keyframes growth {
+    from{
+        width: 25px;
+        opacity: 0;
+    }
+    to{
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+/* The following specifications are for when the screen-size is greater than 900px */
+@media screen and (min-width: 900px) {
+
+    /* Edit the header tag (all instances) and the nav_links
+ class to match our example using flex-properties */
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+    /* flex-property to specify a “size” of 250px */
+    .card{
+        flex-basis: 250px;
+    }
+    /* challenge problem */
+    .card > header{
+        position: sticky;
+        top: 0;
+    }
+}
+
+/* The following specifications are for when the user prefers reduced motion. */
+@media screen and (prefers-reduced-motion: reduce){
+    /* The logo class should appear but not be animated if 
+       prefers-reduced-motion is selected in the accessibility preferences.  */
+    #logo{
+        animation: none;
+    }
+}
+
+/* The following specifications are for when the page is printed. */
+@media print{
+    /*  the Poppins font was throwing off the print view, so add 
+       “font-family:Arial, Helvetica, sans-serif;” to your body element. Also remove background-image */
+    body{
+        background-image: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header{
+       flex-direction: center; 
+    }
+
+    /* Edit the nav/nav_links elements so that they are spaced according to the image below. */
+    nav{
+        width: 100px;
+    }
+
+    .nav_links{
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    /* Edit the pricing class so that the elements align along the bottom. 
+    As long as it aligns along the bottom we don't care if the cards aren't the same height.*/
+    .pricing{
+        flex-wrap: nowrap;
+    }
+
+    /* The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px.*/
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    /* No part of the gallery should be visible. */
+    .gallary{
+        display: none;
+    }
+    #gallary{
+        display: none;
+    }
+
+    /* challenge problem.
+     Without using list-style-type add the thumbs up entity as shown in the cards. */
+    .card li:nth-child(2):after{
+        /* copied and pasted the "👍" pretty sure it will worl */
+        content: "👍";
+    }
+}
