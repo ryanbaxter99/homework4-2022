@@ -38,11 +38,11 @@ a:visited {
     border: solid 2px #45ADAD;
     /* 20px of padding on the top and the bottom */
     padding: 20px;
-   
     /* 50px border-radius on the top left and right corners */
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
+
 /* fixing the cornersw */
 div .card {
     border-top-left-radius: 50px;
@@ -83,14 +83,10 @@ div .card {
 It should start at a width of 25px and grow to 475px.  
 It should also start with an opacity of 0 and end with an opacity of 1 */
 @keyframes growth {
-    from{
-        width: 25px;
-        opacity: 0;
-    }
-    to{
-        width: 475px;
-        opacity: 1;
-    }
+    from{width: 25px;
+    opacity: 0;}
+    to{width: 475px;
+    opacity: 1;}
 }
 
 /* The following specifications are for when the screen-size is greater than 900px */
@@ -122,12 +118,10 @@ It should also start with an opacity of 0 and end with an opacity of 1 */
 
 /* The following specifications are for when the user prefers reduced motion. */
 @media screen and (prefers-reduced-motion: reduce){
-    /* The logo class should appear but not be animated if 
-       prefers-reduced-motion is selected in the accessibility preferences.  */
-    #logo{
+    #logo{ 
         animation: none;
     }
-}
+ }
 
 /* The following specifications are for when the page is printed. */
 @media print{
@@ -139,7 +133,7 @@ It should also start with an opacity of 0 and end with an opacity of 1 */
     }
 
     header{
-       flex-direction: center; 
+        flex-direction: column;
     }
 
     /* Edit the nav/nav_links elements so that they are spaced according to the image below. */
@@ -165,10 +159,7 @@ It should also start with an opacity of 0 and end with an opacity of 1 */
     }
 
     /* No part of the gallery should be visible. */
-    .gallary{
-        display: none;
-    }
-    #gallary{
+    .gallary, #gallary{
         display: none;
     }
 
